@@ -1,0 +1,82 @@
+
+body {
+    background: linear-gradient(to bottom, #e0e7ff, #f2f2f2);
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #333;
+}
+
+.logo {
+    font-weight: bold;
+    color: #4a69bd;
+}
+
+.input-group .form-control {
+    border-radius: 50rem;
+}
+
+.input-group .input-group-text {
+    border-radius: 50rem;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.description-card {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    color: white;
+}
+
+.add-friends-card {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.add-friends-card .btn {
+    background-color: #4a69bd;
+    border: none;
+}
+
+.ranking-card img {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.bottom-nav {
+    background-color: #ffffff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.nav-item {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: #4a69bd;
+}
+
+.nav-item-add .add-button {
+    background-color: #4a69bd;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transform: translateY(-25px);
+    box-shadow: 0 4px 12px rgba(74, 105, 189, 0.5);
+    cursor: pointer;
+}
