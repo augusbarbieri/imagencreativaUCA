@@ -106,3 +106,8 @@ body {
     border-radius: 50rem;
     padding: 0.75rem 1.5rem;
 }
+
+#map {
+    height: 300px;
+    width: 100%;
+}
