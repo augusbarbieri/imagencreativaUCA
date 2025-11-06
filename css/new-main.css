@@ -80,3 +80,25 @@ body {
     box-shadow: 0 4px 12px rgba(74, 105, 189, 0.5);
     cursor: pointer;
 }
+
+.profile-card {
+    background-color: white;
+    padding: 2rem;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    border: 3px solid #4a69bd;
+}
+
+.logout-btn {
+    background-color: #4a69bd;
+    border-color: #4a69bd;
+    border-radius: 50rem;
+    padding: 0.75rem 1.5rem;
+}
