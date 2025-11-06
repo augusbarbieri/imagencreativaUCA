@@ -58,6 +58,10 @@ body {
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .nav-item {
