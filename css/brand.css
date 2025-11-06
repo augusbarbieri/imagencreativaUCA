@@ -1,0 +1,169 @@
+:root {
+    --azul-electrico: #0000FF;
+    --a8-555f7-vibrante: #A855F7;
+    --cian-intermedio: #00FFFF;
+    --negro-profundo: #000000;
+    --gris-medio: #808080;
+    --gradient-start: #F074FF;
+    --gradient-end: #F573FF;
+}
+
+/* General Body Styles */
+body {
+    background-color: var(--negro-profundo);
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
+/* Login Page Specific Styles */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--negro-profundo);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--negro-profundo);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+    font-weight: bold;
+    color: var(--azul-electrico);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    white-space: nowrap;
+}
+
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gris-medio);
+    border-radius: 5px;
+    background-color: var(--negro-profundo);
+    color: #fff;
+}
+
+.input-group .form-control {
+    border-radius: 50rem;
+}
+
+.input-group .input-group-text {
+    border-radius: 50rem;
+    background-color: var(--negro-profundo);
+    border: 1px solid var(--gris-medio);
+}
+
+.input-group input::placeholder {
+    color: var(--gris-medio);
+}
+
+/* Buttons */
+button, .btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--azul-electrico);
+    color: white;
+    cursor: pointer;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: var(--negro-profundo);
+}
+
+.description-card {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: white;
+}
+
+.add-friends-card {
+    background-color: var(--negro-profundo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.add-friends-card .btn {
+    background-color: var(--a8-555f7-vibrante);
+    border: none;
+}
+
+.ranking-card img {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    background-color: #121212;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-item {
+    color: var(--gris-medio);
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: var(--a8-555f7-vibrante);
+}
+
+.nav-item-add .add-button {
+    background-color: var(--a8-555f7-vibrante);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transform: translateY(-25px);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.5);
+    cursor: pointer;
+}
+
+/* Profile */
+.profile-card {
+    background-color: var(--negro-profundo);
+    padding: 2rem;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    border: 3px solid var(--a8-555f7-vibrante);
+}
+
+.logout-btn {
+    background-color: var(--a8-555f7-vibrante);
+    border-color: var(--a8-555f7-vibrante);
+    border-radius: 50rem;
+    padding: 0.75rem 1.5rem;
+}
