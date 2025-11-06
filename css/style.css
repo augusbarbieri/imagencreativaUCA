@@ -19,8 +19,10 @@ body {
 }
 
 .logo {
-    width: 150px;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    white-space: nowrap;
 }
 
 input {
