@@ -15,19 +15,31 @@
         <!-- Search Bar -->
         <div class="px-3 mb-4">
             <div class="input-group">
-                <span class="input-group-text bg-white border-end-0"><i class="fas fa-search"></i></span>
+                <span class="input-group-text border-end-0"><i class="fas fa-search"></i></span>
                 <input type="text" class="form-control border-start-0" placeholder="Buscar">
             </div>
         </div>
 
         <!-- Main Content -->
         <main class="flex-grow-1 px-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5 class="mb-0">Reseñas populares</h5>
-                <a href="#" class="btn btn-primary rounded-pill">Añadir amigos</a>
-            </div>
-            <div id="reviews-container" class="row g-3">
-                <!-- Reviews will be injected here -->
+            <div class="row">
+                <div class="col-8">
+                    <h5 class="mb-3">Reseñas populares</h5>
+                    <div id="reviews-container" class="row g-3">
+                        <!-- Reviews will be injected here -->
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card description-card text-white text-center p-3 mb-3">
+                        <h6 class="card-title">Añadir amigos</h6>
+                        <p class="card-text small">Conecta con otros amantes de la música.</p>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">Buscar</a>
+                    </div>
+                    <div class="card ranking-card p-3">
+                        <h6 class="text-center mb-3">Ranking de la semana</h6>
+                        <img src="assets/ranking.png" alt="Ranking" class="img-fluid">
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -64,7 +76,7 @@
         reviews.forEach(review => {
             const reviewCard = `
                 <div class="col-12">
-                    <div class="card review-card">
+                    <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-2">
                                 <img src="${review.profilePic}" class="rounded-circle me-2" alt="Profile pic" width="30" height="30">
@@ -73,7 +85,7 @@
                                     <small class="text-muted">${review.artist} - ${review.album}</small>
                                 </div>
                             </div>
-                            <p class="card-text">${review.review}</p>
+                            <p class="card-text text-dark">${review.review}</p>
                         </div>
                         <img src="${review.cover}" class="card-img-bottom" alt="Album cover">
                     </div>
