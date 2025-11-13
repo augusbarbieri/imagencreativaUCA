@@ -1,5 +1,0 @@
-127.0.0.1 - - [12/Nov/2025 23:00:16] "GET /main.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Nov/2025 23:00:17] "GET /css/brand.css HTTP/1.1" 200 -
-127.0.0.1 - - [12/Nov/2025 23:00:17] "GET /assets/map.svg HTTP/1.1" 200 -
-127.0.0.1 - - [12/Nov/2025 23:00:17] "GET /assets/logo.png HTTP/1.1" 200 -
-127.0.0.1 - - [12/Nov/2025 23:00:17] "GET /assets/ranking.png HTTP/1.1" 200 -
