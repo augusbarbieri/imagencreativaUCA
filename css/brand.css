@@ -219,3 +219,8 @@ main h5 {
     border-top: 1px solid #eee;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
 }
+
+.album-cover {
+    max-width: 50%;
+    margin: auto;
+}
