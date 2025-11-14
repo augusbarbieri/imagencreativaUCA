@@ -26,16 +26,8 @@
         <main class="container-fluid mt-3">
             <div class="row">
                 <!-- Reviews Column -->
-                <div class="col-12">
+                <div class="col-12" id="reviews-container">
                     <h5 class="mb-3">Todas las reseñas</h5>
-                    <div class="row" id="reviews-container">
-                        <div class="col-md-6" id="reviews-col-1">
-                            <!-- Reviews column 1 -->
-                        </div>
-                        <div class="col-md-6" id="reviews-col-2">
-                            <!-- Reviews column 2 -->
-                        </div>
-                    </div>
                 </div>
             </div>
         </main>
@@ -82,38 +74,35 @@
 
             const allReviews = JSON.parse(localStorage.getItem('webeat-reviews'));
 
-            const reviewsCol1 = document.getElementById('reviews-col-1');
-            const reviewsCol2 = document.getElementById('reviews-col-2');
+            const reviewsContainer = document.getElementById('reviews-container');
 
-            // Clear existing content
-            reviewsCol1.innerHTML = '';
-            reviewsCol2.innerHTML = '';
-
-            allReviews.forEach((review, index) => {
+            allReviews.forEach(review => {
                 const reviewCardHTML = `
-                    <div class="card review-card mb-3">
-                        <div class="card-header bg-transparent border-bottom-0">
-                            <div class="d-flex align-items-center">
-                                <img src="${review.profilePic}" alt="${review.user}" class="profile-pic rounded-circle me-2">
-                                <div>
-                                    <h6 class="mb-0">${review.user}</h6>
+                    <div class="review-card mb-4">
+                        <div class="d-flex">
+                            <img src="${review.cover}" class="album-cover" alt="Cover of ${review.album}">
+                            <div class="review-content">
+                                <div class="review-header">
+                                    <img src="${review.profilePic}" alt="${review.user}" class="profile-pic rounded-circle">
+                                    <span class="username">${review.user}</span>
+                                </div>
+                                <div class="review-title">
+                                    <h5 class="album-title">${review.album}</h5>
+                                    <span class="release-year">${review.year}</span>
+                                </div>
+                                <div class="rating">
+                                    ${'★'.repeat(Math.floor(review.rating))}${'½'.repeat(review.rating % 1 !== 0 ? 1 : 0)}
+                                </div>
+                                <p class="review-text">${review.review}</p>
+                                <div class="review-actions">
+                                    <span><i class="far fa-heart"></i> ${review.likes} likes</span>
+                                    <span><i class="far fa-comment"></i> ${review.comments}</span>
                                 </div>
                             </div>
                         </div>
-                        <img src="${review.cover}" class="card-img-top" alt="Cover of ${review.album}">
-                        <div class="card-body">
-                            <h5 class="card-title">${review.album}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${review.artist}</h6>
-                            <p class="card-text">"${review.review}"</p>
-                        </div>
                     </div>
                 `;
-
-                if (index % 2 === 0) {
-                    reviewsCol1.innerHTML += reviewCardHTML;
-                } else {
-                    reviewsCol2.innerHTML += reviewCardHTML;
-                }
+                reviewsContainer.innerHTML += reviewCardHTML;
             });
         });
     </script>

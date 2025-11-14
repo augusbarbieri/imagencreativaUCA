@@ -222,27 +222,71 @@ main h5 {
 }
 
 /* Card Styles Overhaul */
-.review-card, .add-friends-card, .ranking-card {
-    background-color: #fff;
+.review-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--background-light);
+    padding: 1rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border: none;
-    overflow: hidden; /* Ensures child elements like images respect the border radius */
 }
 
-.review-card .card-body {
-    padding: 1rem;
+.review-card .album-cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+
+.review-card .review-content {
+    flex-grow: 1;
+}
+
+.review-card .review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .review-card .profile-pic {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--primary-color);
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
 }
 
-.review-card .card-img-bottom {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+.review-card .username {
+    font-weight: bold;
+}
+
+.review-card .review-title {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+}
+
+.review-card .album-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.review-card .release-year {
+    color: var(--text-secondary);
+}
+
+.review-card .rating {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.review-card .review-text {
+    margin-bottom: 0.5rem;
+}
+
+.review-card .review-actions {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-secondary);
 }
 
 .add-friends-card {
