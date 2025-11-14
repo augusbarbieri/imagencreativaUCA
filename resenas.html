@@ -9,36 +9,114 @@
     <link rel="stylesheet" href="css/brand.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Reseñas</h1>
-    </div>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="d-flex justify-content-between align-items-center p-3">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="WeBeat Logo" class="logo">
+            </div>
+            <div class="search-bar flex-grow-1 mx-3">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="form-control" placeholder="Buscar">
+            </div>
+            <i class="far fa-bell notification-icon"></i>
+        </header>
 
-    <!-- Bottom Navigation -->
-    <footer class="mt-auto">
-        <nav class="bottom-nav d-flex justify-content-around align-items-center">
-            <a href="resenas.html" class="nav-item text-center active">
-                <i class="far fa-comment-alt"></i>
-                <span class="d-block small">Reseñas</span>
-            </a>
-            <a href="main.html" class="nav-item text-center">
-                <i class="fas fa-home"></i>
-                <span class="d-block small">Home</span>
-            </a>
-            <a href="#" class="nav-item-add">
-                <div class="add-button d-flex justify-content-center align-items-center">
-                    <i class="fas fa-plus"></i>
+        <!-- Main Content -->
+        <main class="container-fluid mt-3">
+            <div class="row">
+                <!-- Reviews Column -->
+                <div class="col-12">
+                    <h5 class="mb-3">Todas las reseñas</h5>
+                    <div class="row" id="reviews-container">
+                        <div class="col-md-6" id="reviews-col-1">
+                            <!-- Reviews column 1 -->
+                        </div>
+                        <div class="col-md-6" id="reviews-col-2">
+                            <!-- Reviews column 2 -->
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="juegos.html" class="nav-item text-center">
-                <i class="fas fa-gamepad"></i>
-                <span class="d-block small">Juegos</span>
-            </a>
-            <a href="perfil.html" class="nav-item text-center">
-                <i class="far fa-user"></i>
-                <span class="d-block small">Perfil</span>
-            </a>
-        </nav>
-    </footer>
+            </div>
+        </main>
+
+        <!-- Floating Action Button -->
+        <a href="crear-resena.html" class="btn btn-primary rounded-circle position-fixed" style="bottom: 80px; right: 20px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+            <i class="fas fa-plus"></i>
+        </a>
+
+        <!-- Bottom Navigation -->
+        <footer class="mt-auto">
+            <nav class="bottom-nav d-flex justify-content-around align-items:center">
+                <a href="resenas.html" class="nav-item text-center active">
+                    <i class="far fa-comment-alt"></i>
+                    <span class="d-block small">Reseñas</span>
+                </a>
+                <a href="main.html" class="nav-item text-center">
+                    <i class="fas fa-home"></i>
+                    <span class="d-block small">Home</span>
+                </a>
+                <a href="crear-resena.html" class="nav-item-add">
+                    <div class="add-button d-flex justify-content-center align-items-center">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </a>
+                <a href="juegos.html" class="nav-item text-center">
+                    <i class="fas fa-gamepad"></i>
+                    <span class="d-block small">Juegos</span>
+                </a>
+                <a href="perfil.html" class="nav-item text-center">
+                    <i class="far fa-user"></i>
+                    <span class="d-block small">Perfil</span>
+                </a>
+            </nav>
+        </footer>
+    </div>
+    <script src="js/mockData.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize localStorage if it's empty
+            if (!localStorage.getItem('webeat-reviews')) {
+                localStorage.setItem('webeat-reviews', JSON.stringify(reviews));
+            }
+
+            const allReviews = JSON.parse(localStorage.getItem('webeat-reviews'));
+
+            const reviewsCol1 = document.getElementById('reviews-col-1');
+            const reviewsCol2 = document.getElementById('reviews-col-2');
+
+            // Clear existing content
+            reviewsCol1.innerHTML = '';
+            reviewsCol2.innerHTML = '';
+
+            allReviews.forEach((review, index) => {
+                const reviewCardHTML = `
+                    <div class="card review-card mb-3">
+                        <div class="card-header bg-transparent border-bottom-0">
+                            <div class="d-flex align-items-center">
+                                <img src="${review.profilePic}" alt="${review.user}" class="profile-pic rounded-circle me-2">
+                                <div>
+                                    <h6 class="mb-0">${review.user}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="${review.cover}" class="card-img-top" alt="Cover of ${review.album}">
+                        <div class="card-body">
+                            <h5 class="card-title">${review.album}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${review.artist}</h6>
+                            <p class="card-text">"${review.review}"</p>
+                        </div>
+                    </div>
+                `;
+
+                if (index % 2 === 0) {
+                    reviewsCol1.innerHTML += reviewCardHTML;
+                } else {
+                    reviewsCol2.innerHTML += reviewCardHTML;
+                }
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

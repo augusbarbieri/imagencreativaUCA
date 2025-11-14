@@ -234,6 +234,12 @@ main h5 {
     padding: 1rem;
 }
 
+.review-card .profile-pic {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+}
+
 .review-card .card-img-bottom {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
