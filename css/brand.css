@@ -262,4 +262,14 @@ main h5 {
 .album-cover {
     max-width: 100%;
     margin: auto;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.album-cover:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
 }
