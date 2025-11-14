@@ -23,4 +23,20 @@ const reviews = [
     review: "Una colección increíble de los mejores éxitos de Queen.",
     cover: "assets/album3.png",
   },
+  {
+    user: "IndieHead",
+    profilePic: "assets/profile4.png",
+    artist: "The Strokes",
+    album: "Is This It",
+    review: "El álbum debut que definió el rock de los 2000. Imprescindible.",
+    cover: "assets/album4.png",
+  },
+  {
+    user: "PopPrincess",
+    profilePic: "assets/profile5.png",
+    artist: "Dua Lipa",
+    album: "Future Nostalgia",
+    review: "Un disco pop perfecto de principio a fin. Lleno de energía.",
+    cover: "assets/album5.png",
+  }
 ];

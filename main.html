@@ -86,6 +86,12 @@
     <script src="js/mockData.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Initialize localStorage if it's empty
+            if (!localStorage.getItem('webeat-reviews')) {
+                localStorage.setItem('webeat-reviews', JSON.stringify(reviews));
+            }
+
+            const allReviews = JSON.parse(localStorage.getItem('webeat-reviews'));
             const reviewsCol1 = document.getElementById('reviews-col-1');
             const reviewsCol2 = document.getElementById('reviews-col-2');
 
@@ -93,7 +99,7 @@
             reviewsCol1.innerHTML = '';
             reviewsCol2.innerHTML = '';
 
-            reviews.forEach((review, index) => {
+            allReviews.forEach((review, index) => {
                 const reviewCardHTML = `
                     <div class="card review-card mb-3">
                         <div class="card-header bg-transparent border-bottom-0">

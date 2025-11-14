@@ -9,36 +9,112 @@
     <link rel="stylesheet" href="css/brand.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Crear Reseña</h1>
-    </div>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="d-flex justify-content-between align-items-center p-3">
+            <a href="main.html" class="text-dark">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h5 class="mb-0">Crear Reseña</h5>
+            <button class="btn btn-primary rounded-pill btn-sm">Publicar</button>
+        </header>
 
-    <!-- Bottom Navigation -->
-    <footer class="mt-auto">
-        <nav class="bottom-nav d-flex justify-content-around align-items-center">
-            <a href="resenas.html" class="nav-item text-center">
-                <i class="far fa-comment-alt"></i>
-                <span class="d-block small">Reseñas</span>
-            </a>
-            <a href="main.html" class="nav-item text-center">
-                <i class="fas fa-home"></i>
-                <span class="d-block small">Home</span>
-            </a>
-            <a href="crear-resena.html" class="nav-item-add active">
-                <div class="add-button d-flex justify-content-center align-items-center">
-                    <i class="fas fa-plus"></i>
+        <!-- Main Content -->
+        <main class="container mt-3">
+            <div class="row">
+                <div class="col-12">
+                    <form>
+                        <div class="mb-3">
+                            <label for="artistName" class="form-label">Artista</label>
+                            <input type="text" class="form-control" id="artistName" placeholder="Nombre del artista">
+                        </div>
+                        <div class="mb-3">
+                            <label for="albumName" class="form-label">Álbum</label>
+                            <input type="text" class="form-control" id="albumName" placeholder="Nombre del álbum">
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewText" class="form-label">Reseña</label>
+                            <textarea class="form-control" id="reviewText" rows="5" placeholder="Escribe tu reseña..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="albumCover" class="form-label">Portada del Álbum</label>
+                            <input type="file" class="form-control" id="albumCover">
+                        </div>
+                    </form>
                 </div>
-            </a>
-            <a href="juegos.html" class="nav-item text-center">
-                <i class="fas fa-gamepad"></i>
-                <span class="d-block small">Juegos</span>
-            </a>
-            <a href="perfil.html" class="nav-item text-center">
-                <i class="far fa-user"></i>
-                <span class="d-block small">Perfil</span>
-            </a>
-        </nav>
-    </footer>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <footer class="mt-auto">
+            <nav class="bottom-nav d-flex justify-content-around align-items-center">
+                <a href="resenas.html" class="nav-item text-center">
+                    <i class="far fa-comment-alt"></i>
+                    <span class="d-block small">Reseñas</span>
+                </a>
+                <a href="main.html" class="nav-item text-center">
+                    <i class="fas fa-home"></i>
+                    <span class="d-block small">Home</span>
+                </a>
+                <a href="crear-resena.html" class="nav-item-add active">
+                    <div class="add-button d-flex justify-content-center align-items-center">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </a>
+                <a href="juegos.html" class="nav-item text-center">
+                    <i class="fas fa-gamepad"></i>
+                    <span class="d-block small">Juegos</span>
+                </a>
+                <a href="perfil.html" class="nav-item text-center">
+                    <i class="far fa-user"></i>
+                    <span class="d-block small">Perfil</span>
+                </a>
+            </nav>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let coverImageDataUrl = "assets/logo.png";
+
+            const albumCoverInput = document.getElementById('albumCover');
+            albumCoverInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        coverImageDataUrl = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            const publishBtn = document.querySelector('.btn-primary');
+            publishBtn.addEventListener('click', function () {
+                const artist = document.getElementById('artistName').value;
+                const album = document.getElementById('albumName').value;
+                const reviewText = document.getElementById('reviewText').value;
+
+                if (artist && album && reviewText) {
+                    const newReview = {
+                        user: "New User", // Placeholder
+                        profilePic: "assets/logo.png", // Placeholder
+                        artist: artist,
+                        album: album,
+                        review: reviewText,
+                        cover: coverImageDataUrl,
+                    };
+
+                    let reviews = JSON.parse(localStorage.getItem('webeat-reviews')) || [];
+                    reviews.unshift(newReview);
+                    localStorage.setItem('webeat-reviews', JSON.stringify(reviews));
+
+                    window.location.href = "resenas.html";
+                } else {
+                    alert("Por favor, completa todos los campos.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
