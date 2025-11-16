@@ -1,7 +1,6 @@
-
 from playwright.sync_api import sync_playwright
 
-def verify_juegos_page():
+def verify_juegos_header():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
@@ -10,4 +9,4 @@ def verify_juegos_page():
         browser.close()
 
 if __name__ == "__main__":
-    verify_juegos_page()
+    verify_juegos_header()

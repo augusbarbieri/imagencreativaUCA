@@ -10,11 +10,17 @@ body {
 }
 
 /* Page Header */
-.page-header h1 {
+.juegos-header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem; /* Space between header and game cards */
+    text-align: center;
+}
+
+.juegos-header h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 3rem; /* Generous margin */
+    margin: 0; /* Reset margin to allow parent padding to control spacing */
 }
 
 /* Games Grid Layout */
