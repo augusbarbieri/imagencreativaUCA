@@ -24,18 +24,11 @@
 
         <!-- Main Content -->
         <main class="container-fluid mt-3">
-            <div class="row">
-                <!-- Reviews Column -->
-                <div class="col-12" id="reviews-container">
-                    <h5 class="mb-3">Todas las reseñas</h5>
-                </div>
+            <h5 class="mb-3 p-3">Opiniones recientes</h5>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4" id="reviews-container">
+                <!-- Review cards will be inserted here by JavaScript -->
             </div>
         </main>
-
-        <!-- Floating Action Button -->
-        <a href="crear-resena.html" class="btn btn-primary rounded-circle position-fixed" style="bottom: 80px; right: 20px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-            <i class="fas fa-plus"></i>
-        </a>
 
         <!-- Bottom Navigation -->
         <footer class="mt-auto">
@@ -78,26 +71,19 @@
 
             allReviews.forEach(review => {
                 const reviewCardHTML = `
-                    <div class="review-card mb-4">
-                        <div class="d-flex">
-                            <img src="${review.cover}" class="album-cover" alt="Cover of ${review.album}">
-                            <div class="review-content">
-                                <div class="review-header">
-                                    <img src="${review.profilePic}" alt="${review.user}" class="profile-pic rounded-circle">
-                                    <span class="username">${review.user}</span>
+                    <div class="col">
+                        <div class="trustpilot-card">
+                            <div class="card-header">
+                                <div class="avatar">${review.user.charAt(0)}</div>
+                                <div class="user-info">
+                                    <div class="username">${review.user}</div>
+                                    <div class="rating">${'★'.repeat(Math.floor(review.rating))}${'½'.repeat(review.rating % 1 !== 0 ? 1 : 0)}</div>
                                 </div>
-                                <div class="review-title">
-                                    <h5 class="album-title">${review.album}</h5>
-                                    <span class="release-year">${review.year}</span>
-                                </div>
-                                <div class="rating">
-                                    ${'★'.repeat(Math.floor(review.rating))}${'½'.repeat(review.rating % 1 !== 0 ? 1 : 0)}
-                                </div>
-                                <p class="review-text">${review.review}</p>
-                                <div class="review-actions">
-                                    <span><i class="far fa-heart"></i> ${review.likes} likes</span>
-                                    <span><i class="far fa-comment"></i> ${review.comments}</span>
-                                </div>
+                            </div>
+                            <p class="review-text">${review.review}</p>
+                            <div class="album-info">
+                                <img src="${review.cover}" class="album-miniature" alt="Cover of ${review.album}">
+                                <span>${review.album}</span>
                             </div>
                         </div>
                     </div>
