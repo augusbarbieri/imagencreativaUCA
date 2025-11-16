@@ -11,6 +11,9 @@ test('should display the new reviews on the main page', async ({ page }) => {
   await expect(page.getByText('TaylorFan')).toBeVisible();
   await expect(page.getByText('YeezyFan')).toBeVisible();
   await expect(page.getByText('QueenLover')).toBeVisible();
+  await expect(page.getByText('Rockero99')).toBeVisible();
+  await expect(page.getByText('HipHopHead')).toBeVisible();
+  await expect(page.getByText('JazzCat')).toBeVisible();
 
   // Take a screenshot to confirm
   await page.screenshot({ path: 'verification.png' });
