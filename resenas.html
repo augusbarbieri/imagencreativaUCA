@@ -60,11 +60,7 @@
     <script src="js/mockData.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Initialize localStorage if it's empty
-            if (!localStorage.getItem('webeat-reviews')) {
-                localStorage.setItem('webeat-reviews', JSON.stringify(reviews));
-            }
-
+            localStorage.setItem('webeat-reviews', JSON.stringify(reviews));
             const allReviews = JSON.parse(localStorage.getItem('webeat-reviews'));
 
             const reviewsContainer = document.getElementById('reviews-container');
