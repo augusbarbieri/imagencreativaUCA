@@ -37,24 +37,24 @@ const reviews = [
   },
   {
     user: "IndieHead",
-    profilePic: "assets/profile1.png",
+    profilePic: "assets/profile4.png",
     artist: "The Strokes",
     album: "Is This It",
     year: 2001,
     review: "El álbum debut que definió el rock de los 2000. Imprescindible.",
-    cover: "assets/album1.png",
+    cover: "assets/album4.png",
     rating: 4.5,
     likes: "18,921",
     comments: 33
   },
   {
     user: "PopPrincess",
-    profilePic: "assets/profile2.png",
+    profilePic: "assets/profile5.png",
     artist: "Dua Lipa",
     album: "Future Nostalgia",
     year: 2020,
     review: "Un disco pop perfecto de principio a fin. Lleno de energía.",
-    cover: "assets/album2.png",
+    cover: "assets/album5.png",
     rating: 5,
     likes: "35,102",
     comments: 89
