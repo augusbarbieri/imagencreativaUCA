@@ -484,3 +484,32 @@ main h5 {
     border-radius: 4px;
     margin-right: 8px;
 }
+
+/* Page Headers for Juegos and Perfil */
+.page-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background-dark);
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.header-logo-container {
+    margin-right: 1rem;
+}
+
+.header-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.perfil-header {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
