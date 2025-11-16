@@ -158,12 +158,20 @@ body {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
+    .games-grid {
+        grid-template-columns: 1fr; /* Ensure single column on mobile */
+    }
+
     .game-card-body {
         padding: 1.5rem;
     }
 
     #lyrics input {
-        width: 120px;
+        width: 100px; /* Further reduce input size */
+    }
+
+    .album-covers-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 covers per row */
     }
 }
