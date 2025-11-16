@@ -1,0 +1,163 @@
+/* General Body and Container Styles */
+body {
+    background-color: var(--background-light);
+}
+
+.juegos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 120px 1rem; /* Added generous padding-bottom for footer */
+}
+
+/* Page Header */
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem; /* Generous margin */
+}
+
+/* Games Grid Layout */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; /* Spacing between cards */
+}
+
+/* Game Card Styles */
+.game-card {
+    background-color: var(--background-dark);
+    border-radius: 1rem; /* Softer rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    overflow: hidden; /* Ensures content respects border-radius */
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card-body {
+    padding: 2rem; /* Generous internal padding */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.game-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.game-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6; /* Improved readability */
+}
+
+/* "Adivina la canción" Specifics */
+.soundwave-img {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.album-covers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.album-covers-grid .album-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: none;
+}
+
+.album-covers-grid .album-cover:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
+}
+
+/* "Completa la canción" Specifics */
+#lyrics-container {
+    background-color: var(--background-light);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Make it take available space */
+}
+
+#lyrics {
+    white-space: pre-wrap;
+    line-height: 2.5; /* Increased line-height for alignment */
+    font-size: 1rem;
+    margin: 0;
+}
+
+#lyrics input {
+    width: 150px; /* Consistent width */
+    height: 38px; /* Consistent height */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background-color: var(--background-dark);
+    vertical-align: middle; /* Better vertical alignment */
+}
+
+#check-answers-btn {
+    align-self: center; /* Center the button */
+    margin-top: auto; /* Push to the bottom */
+    padding: 0.75rem 2rem;
+    min-width: 150px;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+/* Floating Add Button (+) */
+.nav-item-add {
+    position: fixed;
+    right: 20px;
+    bottom: 90px; /* Raised to not overlap with nav menu */
+    z-index: 1050;
+    transform: none; /* Reset transform from brand.css */
+}
+
+.nav-item-add .add-button {
+    transform: none; /* Reset transform from brand.css */
+}
+
+/* Placeholder for the central button in the nav bar */
+.nav-item-add-placeholder {
+    width: 60px; /* Match the width of the floating button */
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .games-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+        gap: 60px; /* Increase vertical gap when stacked */
+    }
+
+    .juegos-container {
+        padding-top: 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .game-card-body {
+        padding: 1.5rem;
+    }
+
+    #lyrics input {
+        width: 120px;
+    }
+}
