@@ -28,13 +28,8 @@
                 <!-- Left Column: Reviews -->
                 <div class="col-lg-8">
                     <h5 class="mb-3">Reseñas populares</h5>
-                    <div class="row" id="reviews-container">
-                        <div class="col-md-6" id="reviews-col-1">
-                            <!-- Reviews column 1 -->
-                        </div>
-                        <div class="col-md-6" id="reviews-col-2">
-                            <!-- Reviews column 2 -->
-                        </div>
+                    <div id="reviews-container" class="row row-cols-2 row-cols-md-3 g-4">
+                        <!-- Review cards will be injected here by JavaScript -->
                     </div>
                 </div>
                 <!-- Right Column: Friends and Ranking -->
@@ -92,38 +87,29 @@
             }
 
             const allReviews = JSON.parse(localStorage.getItem('webeat-reviews'));
-            const reviewsCol1 = document.getElementById('reviews-col-1');
-            const reviewsCol2 = document.getElementById('reviews-col-2');
+            const reviewsContainer = document.getElementById('reviews-container');
 
             // Clear existing content
-            reviewsCol1.innerHTML = '';
-            reviewsCol2.innerHTML = '';
+            reviewsContainer.innerHTML = '';
 
-            allReviews.forEach((review, index) => {
+            allReviews.forEach(review => {
                 const reviewCardHTML = `
-                    <div class="card review-card mb-3">
-                        <div class="card-header bg-transparent border-bottom-0">
-                            <div class="d-flex align-items-center">
-                                <img src="${review.profilePic}" alt="${review.user}" class="profile-pic rounded-circle me-2">
-                                <div>
-                                    <h6 class="mb-0">${review.user}</h6>
+                    <div class="col">
+                        <div class="card review-card-grid h-100">
+                            <img src="${review.cover}" class="card-img-top album-cover" alt="Cover of ${review.album}">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">${review.album}</h6>
+                                <p class="card-text artist-name">${review.artist}</p>
+                                <div class="d-flex align-items-center user-info">
+                                    <img src="${review.profilePic}" alt="${review.user}" class="profile-pic rounded-circle me-2">
+                                    <small class="text-muted">${review.user}</small>
                                 </div>
+                                <p class="card-text review-text-snippet mt-2">"${review.review}"</p>
                             </div>
-                        </div>
-                        <img src="${review.cover}" class="card-img-top" alt="Cover of ${review.album}">
-                        <div class="card-body">
-                            <h5 class="card-title">${review.album}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${review.artist}</h6>
-                            <p class="card-text">"${review.review}"</p>
                         </div>
                     </div>
                 `;
-
-                if (index % 2 === 0) {
-                    reviewsCol1.innerHTML += reviewCardHTML;
-                } else {
-                    reviewsCol2.innerHTML += reviewCardHTML;
-                }
+                reviewsContainer.innerHTML += reviewCardHTML;
             });
         });
     </script>

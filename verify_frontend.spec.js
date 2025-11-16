@@ -11,7 +11,7 @@ test('should display the new reviews on the main page', async ({ page }) => {
   await page.reload();
 
   // Wait for the reviews to be loaded and rendered
-  await page.waitForSelector('.review-card');
+  await page.waitForSelector('.review-card-grid');
 
   // Verify that the new reviews are visible
   await expect(page.getByText('The Strokes')).toBeVisible();
