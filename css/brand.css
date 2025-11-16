@@ -214,21 +214,21 @@ header {
 .logo-container {
     background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
     border-radius: 50%;
-    padding: 0.5rem;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 header .logo {
-    width: 40px;
-    height: auto;
+    width: 56px;
+    height: 56px;
     margin: 0;
-    border-radius: 0;
-    object-fit: contain;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .search-bar {
