@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="css/brand.css">
 </head>
 <body class="page-main">
+
+    <!-- Off-Canvas Menu -->
+    <div id="notifications-overlay" class="notifications-overlay"></div>
+    <div id="notifications-panel" class="notifications-panel">
+        <h5>Notificaciones</h5>
+        <!-- Las notificaciones se agregarán aquí -->
+        <p>No tienes notificaciones nuevas.</p>
+    </div>
+
     <div class="main-container">
         <!-- Header -->
         <header class="header-unified">
@@ -124,6 +133,21 @@
                 `;
                 reviewsContainer.innerHTML += reviewCardHTML;
             });
+
+        // Off-Canvas Menu Logic
+        const notificationIcon = document.querySelector('.notification-icon');
+        const notificationsPanel = document.getElementById('notifications-panel');
+        const notificationsOverlay = document.getElementById('notifications-overlay');
+
+        notificationIcon.addEventListener('click', function() {
+            notificationsPanel.classList.toggle('is-active');
+            notificationsOverlay.classList.toggle('is-active');
+        });
+
+        notificationsOverlay.addEventListener('click', function() {
+            notificationsPanel.classList.remove('is-active');
+            notificationsOverlay.classList.remove('is-active');
+        });
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
