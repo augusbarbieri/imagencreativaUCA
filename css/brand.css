@@ -510,8 +510,32 @@ main h5 {
     border-radius: 50%;
 }
 
-.perfil-header {
+.page-header-unified {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the title */
+    padding: 1rem;
+    background-color: var(--background-dark);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative; /* Needed for absolute positioning of the logo */
+}
+
+.page-header-unified .header-logo-container {
+    position: absolute; /* Position logo to the left */
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.page-header-unified h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.page-header-unified .header-logo {
+    width: 40px;
+    height: 40px;
 }
 
 /* ==========================================================================
