@@ -222,8 +222,8 @@ body {
 }
 
 .header-unified .header-logo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
 }
 
@@ -520,8 +520,8 @@ main h5 {
     }
 
     .header-unified .header-logo {
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
     }
 
     .header-unified h1 {
@@ -575,6 +575,11 @@ main h5 {
 }
 
 @media (max-width: 600px) {
+    .header-unified .header-logo {
+        width: 60px;
+        height: 60px;
+    }
+
     .page-profile .header-unified h1,
     .page-games .header-unified h1 {
         text-align: right;
