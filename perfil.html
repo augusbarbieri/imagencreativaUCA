@@ -109,7 +109,7 @@
                 return stars;
             }
 
-            reviews.forEach(review => {
+            reviews.slice(0, 6).forEach(review => {
                 const col = document.createElement('div');
                 col.className = 'col';
 
