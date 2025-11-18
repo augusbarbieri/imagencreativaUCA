@@ -571,3 +571,21 @@ main h5 {
         transform: translateY(-20px);
     }
 }
+
+@media (max-width: 600px) {
+    .page-profile .header-unified h1,
+    .page-games .header-unified h1 {
+        text-align: right;
+    }
+
+    .page-profile .header-unified .header-logo-container,
+    .page-games .header-unified .header-logo-container {
+        justify-content: center;
+    }
+
+    .page-profile .header-unified .header-logo,
+    .page-games .header-unified .header-logo {
+        height: 70px;
+        width: auto;
+    }
+}
