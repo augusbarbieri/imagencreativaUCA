@@ -200,41 +200,48 @@ body {
     padding-bottom: 120px; /* Adjust based on nav height */
 }
 
-/* Header Styles */
-header {
+.header-unified {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 1rem;
     background-color: var(--background-dark);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: sticky;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
     top: 0;
     z-index: 1020;
-    display: flex;
-    align-items: center;
 }
 
-.logo-container {
-    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-    border-radius: 50%;
-    padding: 0;
+.header-unified .header-logo-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 56px;
-    height: 56px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    justify-content: flex-start;
 }
 
-header .logo {
-    width: 56px;
-    height: 56px;
+.header-unified .header-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header-unified h1 {
     margin: 0;
-    border-radius: 50%;
-    object-fit: cover;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-icons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
 }
 
 .search-bar {
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .search-icon {
@@ -485,58 +492,6 @@ main h5 {
     margin-right: 8px;
 }
 
-/* Page Headers for Juegos and Perfil */
-.page-header {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--background-dark);
-}
-
-.page-header h1 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: bold;
-}
-
-.header-logo-container {
-    margin-right: 1rem;
-}
-
-.header-logo {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    border-radius: 50%;
-}
-
-.page-header-unified {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the title */
-    padding: 1rem;
-    background-color: var(--background-dark);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: relative; /* Needed for absolute positioning of the logo */
-}
-
-.page-header-unified .header-logo-container {
-    position: absolute; /* Position logo to the left */
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.page-header-unified h1 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: bold;
-}
-
-.page-header-unified .header-logo {
-    width: 40px;
-    height: 40px;
-}
 
 /* ==========================================================================
    Responsive Design - Mobile First

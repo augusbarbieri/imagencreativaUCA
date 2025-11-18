@@ -5,8 +5,7 @@ def verify_header():
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto("http://localhost:8000/main.html")
-        header = page.locator("header")
-        header.screenshot(path="verification.png")
+        page.screenshot(path="verification.png")
         browser.close()
 
 if __name__ == "__main__":
