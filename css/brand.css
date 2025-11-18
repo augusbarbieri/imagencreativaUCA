@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --primary-color: #A855F7;
     --secondary-color: #F074FF;
@@ -13,7 +15,7 @@
 /* General Body Styles */
 body {
     background-color: var(--background-dark);
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-primary);
     margin: 0;
 }
