@@ -493,6 +493,17 @@ main h5 {
 }
 
 
+
+.ranking-musical ul {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding-left: 0;
+}
+
+.ranking-musical li {
+    padding: 0.25rem 0;
+}
+
 /* ==========================================================================
    Responsive Design - Mobile First
    ========================================================================== */
