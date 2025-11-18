@@ -544,9 +544,6 @@ main h5 {
         gap: 1rem;
     }
 
-    .page-main .row {
-        flex-direction: column;
-    }
 
     .page-main .col-lg-4 {
         order: -1;
