@@ -6,7 +6,7 @@ const reviews = [
     album: "Red",
     year: 2012,
     review: "Un clásico moderno. Taylor Swift realmente brilla en 'Red'.",
-    cover: "assets/album1.png",
+    cover: "https://coverartarchive.org/release/22cdc2ff-de42-4286-af9c-0917720ea92d/30972212603.jpg",
     rating: 5,
     likes: "42,633",
     comments: 149
@@ -18,7 +18,7 @@ const reviews = [
     album: "Graduation",
     year: 2007,
     review: "'Graduation' es un álbum icónico que cambió el hip-hop.",
-    cover: "assets/album2.png",
+    cover: "http://coverartarchive.org/release/08e0cab1-e95c-4b33-8ed3-1337d934fb7f/24202595971.png",
     rating: 5,
     likes: "25,477",
     comments: 54
@@ -30,7 +30,7 @@ const reviews = [
     album: "Greatest Hits II",
     year: 1991,
     review: "Una colección increíble de los mejores éxitos de Queen.",
-    cover: "assets/album3.png",
+    cover: "https://dn721907.ca.archive.org/0/items/mbid-fb5d78b3-0901-47f5-88bf-003eeae878a5/mbid-fb5d78b3-0901-47f5-88bf-003eeae878a5-36252175092.jpg",
     rating: 4,
     likes: "22,855",
     comments: 25
@@ -42,7 +42,7 @@ const reviews = [
     album: "Is This It",
     year: 2001,
     review: "El álbum debut que definió el rock de los 2000. Imprescindible.",
-    cover: "assets/album4.png",
+    cover: "https://dn710004.ca.archive.org/0/items/mbid-5fd728bf-f69a-4c45-b68a-4fb30898bb00/mbid-5fd728bf-f69a-4c45-b68a-4fb30898bb00-39829937702.jpg",
     rating: 4.5,
     likes: "18,921",
     comments: 33
@@ -54,7 +54,7 @@ const reviews = [
     album: "Future Nostalgia",
     year: 2020,
     review: "Un disco pop perfecto de principio a fin. Lleno de energía.",
-    cover: "assets/album5.png",
+    cover: "https://ia902905.us.archive.org/1/items/mbid-315bbc48-dea9-463c-bfa9-a6ccab78b990/mbid-315bbc48-dea9-463c-bfa9-a6ccab78b990-25806517352.jpg",
     rating: 5,
     likes: "35,102",
     comments: 89
@@ -66,7 +66,7 @@ const reviews = [
     album: "IV",
     year: 1971,
     review: "Stairway to Heaven es una obra maestra. Un álbum legendario.",
-    cover: "assets/album6.png",
+    cover: "https://ia600303.us.archive.org/35/items/mbid-c66df7b9-c773-4d7c-9a21-7d3f2518dd29/mbid-c66df7b9-c773-4d7c-9a21-7d3f2518dd29-22086503396.png",
     rating: 5,
     likes: "50,123",
     comments: 250
@@ -78,7 +78,7 @@ const reviews = [
     album: "To Pimp a Butterfly",
     year: 2015,
     review: "Una joya del hip-hop moderno. Profundo y complejo.",
-    cover: "assets/album7.png",
+    cover: "https://dn721607.ca.archive.org/0/items/mbid-7d2294a9-fde9-4496-8ded-18e7ea8b7e29/mbid-7d2294a9-fde9-4496-8ded-18e7ea8b7e29-40040680528.jpg",
     rating: 5,
     likes: "45,821",
     comments: 180
@@ -90,7 +90,7 @@ const reviews = [
     album: "Kind of Blue",
     year: 1959,
     review: "El álbum de jazz más importante de la historia. Pura magia.",
-    cover: "assets/album8.png",
+    cover: "https://ia801607.us.archive.org/13/items/mbid-e7ba3cb7-a074-45ee-870f-3baeb6d3e8bf/mbid-e7ba3cb7-a074-45ee-870f-3baeb6d3e8bf-12708426541.jpg",
     rating: 5,
     likes: "30,543",
     comments: 120
@@ -102,7 +102,7 @@ const reviews = [
     album: "Discovery",
     year: 2001,
     review: "Un viaje sonoro increíble. One More Time es un himno.",
-    cover: "assets/album9.png",
+    cover: "https://ia800208.us.archive.org/21/items/mbid-d073287b-d1bd-4f11-a933-a4386f8cf701/mbid-d073287b-d1bd-4f11-a933-a4386f8cf701-13479423359.png",
     rating: 4.5,
     likes: "38,987",
     comments: 150
@@ -114,7 +114,7 @@ const reviews = [
     album: "Exodus",
     year: 1977,
     review: "Un mensaje de paz y unidad. La esencia del reggae.",
-    cover: "assets/album10.png",
+    cover: "https://ia903204.us.archive.org/26/items/mbid-41ec6d32-57ca-4e67-803a-2260f957888e/mbid-41ec6d32-57ca-4e67-803a-2260f957888e-4411204473.jpg",
     rating: 5,
     likes: "42,111",
     comments: 130
@@ -126,7 +126,7 @@ const reviews = [
     album: "Nevermind",
     year: 1991,
     review: "El disco que cambió el rock. Smells Like Teen Spirit es un himno.",
-    cover: "assets/album11.png",
+    cover: "https://dn721803.ca.archive.org/0/items/mbid-c771f7fc-9e62-4349-a2e3-ceaf7122bf5b/mbid-c771f7fc-9e62-4349-a2e3-ceaf7122bf5b-30501372565.jpg",
     rating: 5,
     likes: "48,321",
     comments: 200
@@ -138,7 +138,7 @@ const reviews = [
     album: "Back to Black",
     year: 2006,
     review: "Una voz única. Un álbum lleno de alma y dolor.",
-    cover: "assets/album12.png",
+    cover: "https://ia601900.us.archive.org/4/items/mbid-ccf4da26-ea82-462f-b753-88bb976fd40e/mbid-ccf4da26-ea82-462f-b753-88bb976fd40e-36926439244.jpg",
     rating: 5,
     likes: "40,543",
     comments: 160
@@ -150,7 +150,7 @@ const reviews = [
     album: "Master of Puppets",
     year: 1986,
     review: "Una obra maestra del metal. Riffs inolvidables.",
-    cover: "assets/album13.png",
+    cover: "https://dn710703.ca.archive.org/0/items/mbid-fed37cfc-2a6d-4569-9ac0-501a7c7598eb/mbid-fed37cfc-2a6d-4569-9ac0-501a7c7598eb-2545774439.jpg",
     rating: 5,
     likes: "46,876",
     comments: 220
@@ -162,7 +162,7 @@ const reviews = [
     album: "Thriller",
     year: 1982,
     review: "El rey del pop en su máxima expresión. Un clásico.",
-    cover: "assets/album14.png",
+    cover: "https://dn710605.ca.archive.org/0/items/mbid-e1b94ba6-c63c-4c2d-8928-9d1a525b7000/mbid-e1b94ba6-c63c-4c2d-8928-9d1a525b7000-22018478497.jpg",
     rating: 5,
     likes: "55,432",
     comments: 300
@@ -174,7 +174,7 @@ const reviews = [
     album: "OK Computer",
     year: 1997,
     review: "Una obra de arte. Un álbum que te vuela la cabeza.",
-    cover: "assets/album15.png",
+    cover: "https://dn720706.ca.archive.org/0/items/mbid-30702389-5c67-4438-9ea0-2351c8de0f1d/mbid-30702389-5c67-4438-9ea0-2351c8de0f1d-43287476628.png",
     rating: 5,
     likes: "49,876",
     comments: 250
@@ -186,7 +186,7 @@ const reviews = [
     album: "Abbey Road",
     year: 1969,
     review: "Una joya de principio a fin. La despedida de una leyenda.",
-    cover: "assets/album16.png",
+    cover: "https://dn721702.ca.archive.org/0/items/mbid-31765b9f-e969-4257-855f-c7ea1f657b2a/mbid-31765b9f-e969-4257-855f-c7ea1f657b2a-39706767821.jpg",
     rating: 5,
     likes: "52,345",
     comments: 280
@@ -198,7 +198,7 @@ const reviews = [
     album: "Blonde",
     year: 2016,
     review: "Un álbum introspectivo y hermoso. Una obra de arte.",
-    cover: "assets/album17.png",
+    cover: "https://dn710706.ca.archive.org/0/items/mbid-8294645a-f996-44b6-9060-7f189b9f59f3/mbid-8294645a-f996-44b6-9060-7f189b9f59f3-14420632959.jpg",
     rating: 5,
     likes: "43,876",
     comments: 190
@@ -210,7 +210,7 @@ const reviews = [
     album: "Highway 61 Revisited",
     year: 1965,
     review: "Un poeta con una guitarra. Un álbum que cambió la música.",
-    cover: "assets/album18.png",
+    cover: "https://ia801909.us.archive.org/0/items/mbid-d61a2bd9-81ac-4023-bd22-1c884d4a176c/mbid-d61a2bd9-81ac-4023-bd22-1c884d4a176c-13700705404.jpg",
     rating: 5,
     likes: "36,876",
     comments: 170
@@ -222,7 +222,7 @@ const reviews = [
     album: "Ramones",
     year: 1976,
     review: "Pura energía. El nacimiento del punk rock.",
-    cover: "assets/album19.png",
+    cover: "https://ia801609.us.archive.org/0/items/mbid-627e3a2a-2df4-46c3-afb3-f734dcc90100/mbid-627e3a2a-2df4-46c3-afb3-f734dcc90100-9227814008.jpg",
     rating: 4.5,
     likes: "33,876",
     comments: 140
@@ -234,7 +234,7 @@ const reviews = [
     album: "Saturday Night Fever",
     year: 1977,
     review: "La banda sonora de una época. Pura fiebre disco.",
-    cover: "assets/album20.png",
+    cover: "https://ia600604.us.archive.org/32/items/mbid-281cf8ac-c635-4b0a-afa6-dae8ded1d16e/mbid-281cf8ac-c635-4b0a-afa6-dae8ded1d16e-18899640171.jpg",
     rating: 4.5,
     likes: "39,876",
     comments: 160
