@@ -46,95 +46,8 @@
 
         <!-- Album Grid -->
         <div class="album-grid mt-5">
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
-                <!-- Album Card 1 -->
-                <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album1.png" class="album-cover" alt="Album 1">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 1</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★★☆</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Album Card 2 -->
-                <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album2.png" class="album-cover" alt="Album 2">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 2</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★★★</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Album Card 3 -->
-                <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album3.png" class="album-cover" alt="Album 3">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 3</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★☆☆</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Album Card 4 -->
-                <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album1.png" class="album-cover" alt="Album 4">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 4</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★★☆</p>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Album Card 5 -->
-                 <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album2.png" class="album-cover" alt="Album 5">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 5</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★★☆</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Album Card 6 -->
-                <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album3.png" class="album-cover" alt="Album 6">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 6</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★★★</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Album Card 7 -->
-                <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album1.png" class="album-cover" alt="Album 7">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 7</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★☆☆</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Album Card 8 -->
-                <div class="col">
-                    <div class="album-card">
-                        <img src="assets/album2.png" class="album-cover" alt="Album 8">
-                        <div class="album-info mt-2">
-                            <strong>Album Title 8</strong>
-                            <p>Artist Name</p>
-                            <p class="rating">★★★★☆</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="album-grid-container" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
+                <!-- Album cards will be inserted here by JavaScript -->
             </div>
         </div>
     </div>
@@ -167,5 +80,53 @@
         </nav>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/mockData.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('album-grid-container');
+
+            function generateStars(rating) {
+                const fullStar = '★';
+                const emptyStar = '☆';
+                const totalStars = 5;
+                let stars = '';
+                const fullStars = Math.floor(rating);
+                const halfStar = rating % 1 !== 0;
+
+                for (let i = 0; i < fullStars; i++) {
+                    stars += fullStar;
+                }
+
+                if (halfStar) {
+                    stars += emptyStar; // Using empty star for half rating for simplicity
+                }
+
+                const remainingStars = totalStars - stars.length;
+                for (let i = 0; i < remainingStars; i++) {
+                    stars += emptyStar;
+                }
+
+                return stars;
+            }
+
+            reviews.forEach(review => {
+                const col = document.createElement('div');
+                col.className = 'col';
+
+                const albumCard = `
+                    <div class="album-card">
+                        <img src="${review.cover}" class="album-cover" alt="${review.album}">
+                        <div class="album-info mt-2">
+                            <strong>${review.album}</strong>
+                            <p>${review.artist}</p>
+                            <p class="rating">${generateStars(review.rating)}</p>
+                        </div>
+                    </div>
+                `;
+                col.innerHTML = albumCard;
+                container.appendChild(col);
+            });
+        });
+    </script>
 </body>
 </html>

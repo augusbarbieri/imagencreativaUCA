@@ -2,19 +2,11 @@ const { test, expect } = require('@playwright/test');
 
 test('should display the new reviews on the main page', async ({ page }) => {
   // Navigate to the local server
-  await page.goto('http://localhost:8000/resenas.html');
+  await page.goto('http://localhost:8000/perfil.html');
 
-  // Wait for the reviews to be loaded and rendered
-  await page.waitForSelector('.trustpilot-card');
+  // Wait for the reviews to be loaded
+  await page.waitForSelector('.album-card');
 
-  // Verify that the new reviews are visible
-  await expect(page.getByText('TaylorFan')).toBeVisible();
-  await expect(page.getByText('YeezyFan')).toBeVisible();
-  await expect(page.getByText('QueenLover')).toBeVisible();
-  await expect(page.getByText('Rockero99')).toBeVisible();
-  await expect(page.getByText('HipHopHead')).toBeVisible();
-  await expect(page.getByText('JazzCat')).toBeVisible();
-
-  // Take a screenshot to confirm
-  await page.screenshot({ path: 'verification.png' });
+  // Take a screenshot of the entire page
+  await page.screenshot({ path: 'perfil_screenshot.png', fullPage: true });
 });
