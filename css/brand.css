@@ -589,3 +589,7 @@ main h5 {
         width: auto;
     }
 }
+
+.profile-stats {
+    flex-direction: row !important;
+}
